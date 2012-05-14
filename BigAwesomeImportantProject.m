@@ -13,6 +13,7 @@ struct = [];
 
 struct = init(struct);
 struct = userInput(struct);
+struct = magicFoo(struct);
 
 return
 
@@ -51,5 +52,10 @@ while ~flagTmp
         fprintf('You need to input a positive integer!\n');
     end
 end
+
+end
+
+function struct = magicFoo(struct)
+
 
 end
