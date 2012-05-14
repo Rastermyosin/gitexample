@@ -6,3 +6,23 @@
 %   Date:       5/14/2012
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+function main()
+% main function that will control the loop.
+
+struct = [];
+
+struct = init(struct);
+
+return
+
+end
+
+
+function struct = init(struct)
+% Initializes the variables, workspace, objects, and scans machine hardware
+%   as needed
+
+struct.inputNum = 0;
+struct.strOut = '';
+
+end
