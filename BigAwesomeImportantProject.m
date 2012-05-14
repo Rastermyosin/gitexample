@@ -61,6 +61,7 @@ end
 end
 
 function struct = magicFoo(struct)
+% Completes that magic that will change mankind forever.
 fprintf('Double your number.\n');
 fprintf('%d',struct.inputNum * 2);
 input('');
@@ -81,3 +82,5 @@ input('Did you get 10 as a result?');
 input('Its like magic!');
 
 end
+
+% EOF
