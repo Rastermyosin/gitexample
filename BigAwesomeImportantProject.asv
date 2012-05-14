@@ -34,7 +34,7 @@ function struct = userInput(struct)
 
 struct.inputStr = input('Chose a starting positive integer: ', 's');
     
-struct.inputNum = str2double(struct.inputStr);    
+    struct.inputStr = str2double(struct.inputStr);    
 
 
 end
