@@ -56,6 +56,23 @@ end
 end
 
 function struct = magicFoo(struct)
+fprintf('Double your number.\n');
+fprintf('%d',struct.inputNum * 2);
+input('');
 
+fprintf('Add 20 to your origional number.\n');
+fprintf('%d',struct.inputNum * 2 + 20);
+input('');
+
+fprintf('Divide by 2.\n');
+fprintf('%d',(struct.inputNum * 2 + 20) / 2);
+input('');
+
+fprintf('Then subtract your origional number.\n');
+fprintf('%d',(struct.inputNum * 2 + 20) / 2 - struct.inputNum);
+input('');
+
+input('Did you get 10 as a result?');
+input('Its like magic!');
 
 end
