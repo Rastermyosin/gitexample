@@ -9,12 +9,15 @@
 function main()
 % main function that will control the loop.
 
+% Creates an empty variable. Will become a structure.
 struct = [];
 
+% Main loop of the program: initialize -> get input -> do magic
 struct = init(struct);
 struct = userInput(struct);
 struct = magicFoo(struct);
 
+% Ends program
 return
 
 end
@@ -24,8 +27,10 @@ function struct = init(struct)
 % Initializes the variables, workspace, objects, and scans machine hardware
 %   as needed
 
+% Initializes the variables needed.
+struct.inputStr = '';
 struct.inputNum = 0;
-struct.strOut = '';
+struct.flagTmp = false;     % Creates a boolean flag for exiting the while loop in userInput().
 
 end
 
@@ -33,12 +38,12 @@ function struct = userInput(struct)
 % Requests an input from the user as a number. Converts that sring to a
 %   number.
 
-% Creates a boolean flag for exiting the loop.
-flagTmp = false;
-
-while ~flagTmp
+% Loops until the user breaks or inputs a correct number when asked.
+while ~struct.flagTmp
+    % Captures keyboard input from user.
     struct.inputStr = input('Chose a starting positive integer: ', 's');
     
+    % Attempts to convert the string to a double.
     struct.inputStr = str2double(struct.inputStr);    
     [sizeRow sizeCol] = size(struct.inputStr);
     
@@ -46,7 +51,7 @@ while ~flagTmp
     if isempty(struct.inputStr) || sizeRow > 1 || sizeCol > 1 
         fprintf('You need to input a positive integer!\n');
     elseif ~(struct.inputStr < 0)% Check if struct.inputStr is a positive integer
-        flagTmp = true;
+        struct.flagTmp = true;
         struct.inputNum = uint16(struct.inputStr);   
     else % All other cases  
         fprintf('You need to input a positive integer!\n');
